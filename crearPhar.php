@@ -80,32 +80,4 @@ class CreatePHAR{
   }
 
 }
-
-//include 'phar://C:\xampp\htdocs\phar\build\pruebas.phar/a.php';
-//require ('C:\xampp\htdocs\phar\build\pruebas.phar');
-//$a = new a();
-//$a->A();die;
-
-/*
-$srcRoot = $ruta."\phar\src";
-$buildRoot = $ruta.'\phar\build';
-
-$phar = new Phar($buildRoot . '/metodos_encadenados.phar',
-  FilesystemIterator::CURRENT_AS_FILEINFO |       FilesystemIterator::KEY_AS_FILENAME, "myapp.phar");
-$phar["metodos_encadenados.php"] = file_get_contents($srcRoot . '/metodos_encadenados.php');
-$phar["common.php"] = file_get_contents($srcRoot . "/common.php");
-$phar->setStub($phar->createDefaultStub('metodos_encadenados.php'));
-
-require ($buildRoot.'\metodos_encadenados.phar');
-$pepe = new pruebas();
-$pepe->A();
-echo 	$pepe->texto;
-
-*/
-
-$phar = new CreatePHAR('C:\xampp\htdocs\phar\src','C:\xampp\htdocs\phar\build','hola.phar');
-$phar->generatePhar();
-//$phar->deleteFileFromPhar('c.php');
-$phar->extractAllPharFiles('C:\xampp\htdocs\phar\extract');
-//$phar->extractPharFiles('C:\xampp\htdocs\phar\extract',array('a.php'));
- ?>
+?>
